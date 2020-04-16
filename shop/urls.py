@@ -13,4 +13,10 @@ urlpatterns = [
         views.ProductCategoryDetail.as_view(),
         name='product-category-detail'
     ),
+
+    # shop/product/
+    path('product/', views.ProductIndex.as_view(), name='products-index'),
+
+    # shop/product/product-slug/
+    path('product/<str:product_slug>/', views.ProductDetail.as_view(), name='product-detail'),
 ]

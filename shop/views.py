@@ -5,17 +5,13 @@ from .serializers import ProductCategorySerializer, ProductSerializer
 
 
 class ProductCategoryIndex(generics.ListCreateAPIView):
-    """fetches all product categories or creates a new one"""
+    """Fetch all product categories or create a new one"""
     queryset = ProductCategory.objects.all()
     serializer_class = ProductCategorySerializer
 
 
 class ProductCategoryDetail(generics.RetrieveUpdateDestroyAPIView):
-    """
-    fetches a single product category using the slug field
-    update a product category
-    delete a product category
-    """
+    """fetch a single product category using the slug field or update a product category or delete a product category"""
     queryset = ProductCategory.objects.all()
     serializer_class = ProductCategorySerializer
     lookup_url_kwarg = 'product_category_slug'
@@ -29,11 +25,7 @@ class ProductIndex(generics.ListCreateAPIView):
 
 
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Fetch a particular product using the slug
-    Update a particular product
-    delete a product
-    """
+    """Fetch a particular product using the slug or Update a particular product or delete a product"""
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     lookup_url_kwarg = 'product_slug'

@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import ProductCategory
+
+
+@admin.register(ProductCategory)
+class ProductCategoryAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('Info', {'fields': ['name', 'description']})
+    ]

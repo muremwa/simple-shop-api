@@ -1,7 +1,7 @@
 from rest_framework import generics
 
 from .models import ProductCategory, Product
-from .serializers import ProductCategorySerializer, ProductSerializer
+from .serializers import ProductCategorySerializer, ProductSerializer, UserSerializer
 
 
 class ProductCategoryIndex(generics.ListCreateAPIView):
@@ -30,3 +30,8 @@ class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ProductSerializer
     lookup_url_kwarg = 'product_slug'
     lookup_field = 'slug'
+
+
+class CreateUser(generics.CreateAPIView):
+    """Create a user with permission to add movies"""
+    serializer_class = UserSerializer

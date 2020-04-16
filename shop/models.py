@@ -41,3 +41,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Movie(models.Model):
+    title = models.CharField(max_length=100)
+    director = models.CharField(max_length=100)
+    synopsis = models.TextField()
+    running_time = models.CharField(max_length=8)
+
+    def __str__(self):
+        return self.title

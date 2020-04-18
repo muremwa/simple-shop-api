@@ -1,9 +1,16 @@
 from django.urls import path
+from rest_framework_swagger.views import get_swagger_view
 
 from . import views
 
 
+schema_view = get_swagger_view(title='Simple Shop API')
+
+
 urlpatterns = [
+    # shop/
+    path('', schema_view, name='documentation'),
+
     # shop/product-category/
     path('product-category/', views.ProductCategoryIndex.as_view(), name='product-category-index'),
 
